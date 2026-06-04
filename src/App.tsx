@@ -9,7 +9,6 @@ import {
   Home,
   Info,
   LockKeyhole,
-  Menu,
   Minus,
   Moon,
   Plus,
@@ -131,34 +130,25 @@ function App() {
   return (
     <main className="site-shell">
       <div className="aurora-lines" aria-hidden="true" />
-      <div className="page-frame">
-        <header className="topbar">
-          <a className="brand" href="#top" aria-label="G Net">
-            <span>G</span>
-            <span className="swap">↔</span>
-            <span>N</span>
-          </a>
-          <nav className="desktop-nav" aria-label="Điều hướng">
-            <a href="#calculator">Tính lương</a>
-            <a href="#guide">Hướng dẫn</a>
-            <a href="#legal">Căn cứ pháp lý</a>
-            <a href="#faq">Câu hỏi thường gặp</a>
-          </nav>
-          <div className="top-actions">
-            <button className="icon-button" aria-label="Đổi giao diện">
-              <Moon size={18} />
-            </button>
-            <button className="ghost-button" onClick={shareResult}>
-              <Share2 size={16} />
-              Chia sẻ
-            </button>
-            <button className="icon-button mobile-menu" aria-label="Menu">
-              <Menu size={20} />
-            </button>
-          </div>
-        </header>
+      <header className="topbar">
+        <a className="brand" href="#top" aria-label="G Net">
+          <span>G</span>
+          <span className="swap">↔</span>
+          <span>N</span>
+        </a>
+        <div className="top-actions">
+          <button className="icon-button" aria-label="Đổi giao diện">
+            <Moon size={18} />
+          </button>
+          <button className="ghost-button" onClick={shareResult}>
+            <Share2 size={16} />
+            Chia sẻ
+          </button>
+        </div>
+      </header>
 
-        <section className="hero" id="top">
+      <section className="hero-section" id="top">
+        <div className="hero">
           <div className="hero-copy">
             <p className="tool-label">Công cụ tính lương 2026</p>
             <h1>
@@ -318,9 +308,11 @@ function App() {
 
             {showFormula && <FormulaBox result={result} region={region} />}
           </section>
-        </section>
+        </div>
+      </section>
 
-        <section className="info-grid" id="legal">
+      <section className="info-section" id="legal">
+        <div className="info-grid">
           <InfoCard
             icon={<BookOpen />}
             title="Căn cứ pháp lý"
@@ -350,25 +342,29 @@ function App() {
               "Tự chỉnh mức đóng BHXH linh hoạt",
             ]}
           />
-        </section>
+        </div>
+      </section>
 
-        <section className="feature-band" id="guide">
+      <section className="feature-section" id="guide">
+        <div className="feature-band">
           <h2>Công cụ dành cho mọi người</h2>
           <Feature icon={<Zap />} title="Nhanh & chính xác" text="Tính trong vài giây" />
           <Feature icon={<BriefcaseBusiness />} title="Đầy đủ & minh bạch" text="Hiển thị từng khoản" />
           <Feature icon={<SlidersHorizontal />} title="Tùy chỉnh linh hoạt" text="Điều chỉnh mức đóng BHXH" />
           <Feature icon={<Smartphone />} title="Tối ưu trên mobile" text="Trải nghiệm mượt mà" />
-        </section>
+        </div>
+      </section>
 
-        <section className="faq" id="faq">
+      <section className="faq-section" id="faq">
+        <div className="faq">
           <h2>Câu hỏi thường gặp</h2>
           <p>
             Công cụ mặc định tính cho cá nhân cư trú ký hợp đồng lao động từ 3
             tháng trở lên, áp dụng biểu thuế lũy tiến từng phần và mức giảm trừ
             gia cảnh từ năm 2026.
           </p>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }
